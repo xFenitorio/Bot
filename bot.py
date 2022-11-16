@@ -1,10 +1,5 @@
-import requests
-#from Scrapy import 
 
-import time
-import schedule
 import requests
-
 
 def telegram_bot_sendtext(bot_message):
     
@@ -15,19 +10,9 @@ def telegram_bot_sendtext(bot_message):
     response = requests.get(send_text)
 
     return response.json()
-
-
-def report():
-    my_message = "Prueba"
-    telegram_bot_sendtext(my_message)
     
 
-
-    
-schedule.every().day.at("20:15").do(report)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+test = telegram_bot_sendtext("Testeando")
+print(test)
 
 
